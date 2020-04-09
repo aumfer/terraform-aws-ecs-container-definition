@@ -52,6 +52,7 @@ locals {
     startTimeout           = var.start_timeout
     stopTimeout            = var.stop_timeout
     systemControls         = var.system_controls
+    resourceRequirements   = var.resource_requirements
   }
 
   json_map = jsonencode(local.container_definition)

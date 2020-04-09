@@ -246,3 +246,14 @@ variable "system_controls" {
   description = "A list of namespaced kernel parameters to set in the container, mapping to the --sysctl option to docker run. This is a list of maps: { namespace = \"\", value = \"\"}"
   default     = null
 }
+
+variable "resource_requirements" {
+  type = list(object({
+    type       = string
+    value      = string
+  }))
+
+  description = "The resource requirements to configure for the container. This is a list of maps. Each map should contain \"type\", and \"object\", where \"type\" is one of \"GPU\" or \"InferenceAccelerator\"."
+
+  default = []
+}
